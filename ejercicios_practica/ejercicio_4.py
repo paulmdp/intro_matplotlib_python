@@ -43,15 +43,30 @@ if __name__ == '__main__':
     #  graf3 | graf4
     # Utilizar add_subplot para lograr este efecto
     # de "2 filas" "2 columna" de gráficos
-
+    fig = plt.figure()
+    fig.suptitle('Funciones Exponenciales', fontsize=16)
+    ax1 = fig.add_subplot(2, 2, 1)  # 2 fila, 2 columnas, axes nº1
+    ax2 = fig.add_subplot(2, 2, 2)  # 2 fila, 2 columnas, axes nº2
+    ax3 = fig.add_subplot(2, 2, 3)  # 2 fila, 2 columnas, axes nº3
+    ax4 = fig.add_subplot(2, 2, 4)  # 2 fila, 2 columnas, axes nº4
     # Se debe colocar en la leyenda la función que representa
     # cada gráfico
-
     # Cada gráfico realizarlo con un color distinto
     # a su elección
-
     # Colocar una grilla a elección
-
+    ax1.plot(x, y1, c='darkgreen', label="f(x)= x^2")
+    ax1.legend()
+    ax1.grid()
+    ax2.plot(x, y2, c='darkred', label="f(x)= x^3")
+    ax2.legend()
+    ax2.grid()
+    ax3.plot(x, y3, c='blue', label="f(x)= x^4")
+    ax3.legend()
+    ax3.grid()
+    ax4.scatter(x, y4, c='black', label="f(x)= sqrt(x)", marker=".")
+    ax4.legend()
+    ax4.grid()
     # Crear acá su gráfico
+    plt.show()
 
     print("terminamos")
